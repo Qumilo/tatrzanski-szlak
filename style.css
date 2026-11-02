@@ -1392,3 +1392,95 @@ a {
     z-index: 900;
 }
 
+/* Responsywność */
+@media (max-width: 1024px) {
+    .trails-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .planner-grid,
+    .signpost-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 960px) {
+    :root {
+        --header-offset: 118px;
+    }
+
+    .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+        font-size: 0.78rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-card);
+        border-bottom: 2px solid var(--border-color);
+        padding: 16px 20px;
+        box-shadow: var(--shadow);
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gps-grid,
+    .trails-grid,
+    .form-grid,
+    .footer-grid,
+    .quiz-score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid,
+    .summary-cards,
+    .signpost-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .add-gear-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 64px 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gps-img-wrap {
+        height: 240px;
+    }
+}
